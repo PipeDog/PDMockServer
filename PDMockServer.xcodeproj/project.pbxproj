@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC92EF85205BA9F90045F84F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF84205BA9F90045F84F /* AppDelegate.m */; };
+		EC92EF88205BA9F90045F84F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF87205BA9F90045F84F /* ViewController.m */; };
+		EC92EF8B205BA9F90045F84F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC92EF89205BA9F90045F84F /* Main.storyboard */; };
+		EC92EF8D205BA9F90045F84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC92EF8C205BA9F90045F84F /* Assets.xcassets */; };
+		EC92EF90205BA9F90045F84F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC92EF8E205BA9F90045F84F /* LaunchScreen.storyboard */; };
+		EC92EF93205BA9F90045F84F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF92205BA9F90045F84F /* main.m */; };
+		EC92EF9D205BA9F90045F84F /* PDMockServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF9C205BA9F90045F84F /* PDMockServerTests.m */; };
+		EC92EFA8205BA9F90045F84F /* PDMockServerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFA7205BA9F90045F84F /* PDMockServerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC92EF99205BA9F90045F84F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC92EF78205BA9F90045F84F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC92EF7F205BA9F90045F84F;
+			remoteInfo = PDMockServer;
+		};
+		EC92EFA4205BA9F90045F84F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC92EF78205BA9F90045F84F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC92EF7F205BA9F90045F84F;
+			remoteInfo = PDMockServer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC92EF80205BA9F90045F84F /* PDMockServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDMockServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC92EF83205BA9F90045F84F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC92EF84205BA9F90045F84F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC92EF86205BA9F90045F84F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC92EF87205BA9F90045F84F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC92EF8A205BA9F90045F84F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC92EF8C205BA9F90045F84F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC92EF8F205BA9F90045F84F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC92EF91205BA9F90045F84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC92EF92205BA9F90045F84F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC92EF98205BA9F90045F84F /* PDMockServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDMockServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC92EF9C205BA9F90045F84F /* PDMockServerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMockServerTests.m; sourceTree = "<group>"; };
+		EC92EF9E205BA9F90045F84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC92EFA3205BA9F90045F84F /* PDMockServerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDMockServerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC92EFA7205BA9F90045F84F /* PDMockServerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMockServerUITests.m; sourceTree = "<group>"; };
+		EC92EFA9205BA9F90045F84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC92EF7D205BA9F90045F84F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC92EF95205BA9F90045F84F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC92EFA0205BA9F90045F84F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC92EF77205BA9F90045F84F = {
+			isa = PBXGroup;
+			children = (
+				EC92EF82205BA9F90045F84F /* PDMockServer */,
+				EC92EF9B205BA9F90045F84F /* PDMockServerTests */,
+				EC92EFA6205BA9F90045F84F /* PDMockServerUITests */,
+				EC92EF81205BA9F90045F84F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC92EF81205BA9F90045F84F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC92EF80205BA9F90045F84F /* PDMockServer.app */,
+				EC92EF98205BA9F90045F84F /* PDMockServerTests.xctest */,
+				EC92EFA3205BA9F90045F84F /* PDMockServerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC92EF82205BA9F90045F84F /* PDMockServer */ = {
+			isa = PBXGroup;
+			children = (
+				EC92EF83205BA9F90045F84F /* AppDelegate.h */,
+				EC92EF84205BA9F90045F84F /* AppDelegate.m */,
+				EC92EF86205BA9F90045F84F /* ViewController.h */,
+				EC92EF87205BA9F90045F84F /* ViewController.m */,
+				EC92EF89205BA9F90045F84F /* Main.storyboard */,
+				EC92EF8C205BA9F90045F84F /* Assets.xcassets */,
+				EC92EF8E205BA9F90045F84F /* LaunchScreen.storyboard */,
+				EC92EF91205BA9F90045F84F /* Info.plist */,
+				EC92EF92205BA9F90045F84F /* main.m */,
+			);
+			path = PDMockServer;
+			sourceTree = "<group>";
+		};
+		EC92EF9B205BA9F90045F84F /* PDMockServerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC92EF9C205BA9F90045F84F /* PDMockServerTests.m */,
+				EC92EF9E205BA9F90045F84F /* Info.plist */,
+			);
+			path = PDMockServerTests;
+			sourceTree = "<group>";
+		};
+		EC92EFA6205BA9F90045F84F /* PDMockServerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC92EFA7205BA9F90045F84F /* PDMockServerUITests.m */,
+				EC92EFA9205BA9F90045F84F /* Info.plist */,
+			);
+			path = PDMockServerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC92EF7F205BA9F90045F84F /* PDMockServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC92EFAC205BA9F90045F84F /* Build configuration list for PBXNativeTarget "PDMockServer" */;
+			buildPhases = (
+				EC92EF7C205BA9F90045F84F /* Sources */,
+				EC92EF7D205BA9F90045F84F /* Frameworks */,
+				EC92EF7E205BA9F90045F84F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PDMockServer;
+			productName = PDMockServer;
+			productReference = EC92EF80205BA9F90045F84F /* PDMockServer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC92EF97205BA9F90045F84F /* PDMockServerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC92EFAF205BA9F90045F84F /* Build configuration list for PBXNativeTarget "PDMockServerTests" */;
+			buildPhases = (
+				EC92EF94205BA9F90045F84F /* Sources */,
+				EC92EF95205BA9F90045F84F /* Frameworks */,
+				EC92EF96205BA9F90045F84F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC92EF9A205BA9F90045F84F /* PBXTargetDependency */,
+			);
+			name = PDMockServerTests;
+			productName = PDMockServerTests;
+			productReference = EC92EF98205BA9F90045F84F /* PDMockServerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC92EFA2205BA9F90045F84F /* PDMockServerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC92EFB2205BA9F90045F84F /* Build configuration list for PBXNativeTarget "PDMockServerUITests" */;
+			buildPhases = (
+				EC92EF9F205BA9F90045F84F /* Sources */,
+				EC92EFA0205BA9F90045F84F /* Frameworks */,
+				EC92EFA1205BA9F90045F84F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC92EFA5205BA9F90045F84F /* PBXTargetDependency */,
+			);
+			name = PDMockServerUITests;
+			productName = PDMockServerUITests;
+			productReference = EC92EFA3205BA9F90045F84F /* PDMockServerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC92EF78205BA9F90045F84F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = PipeDog;
+				TargetAttributes = {
+					EC92EF7F205BA9F90045F84F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					EC92EF97205BA9F90045F84F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EC92EF7F205BA9F90045F84F;
+					};
+					EC92EFA2205BA9F90045F84F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EC92EF7F205BA9F90045F84F;
+					};
+				};
+			};
+			buildConfigurationList = EC92EF7B205BA9F90045F84F /* Build configuration list for PBXProject "PDMockServer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC92EF77205BA9F90045F84F;
+			productRefGroup = EC92EF81205BA9F90045F84F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC92EF7F205BA9F90045F84F /* PDMockServer */,
+				EC92EF97205BA9F90045F84F /* PDMockServerTests */,
+				EC92EFA2205BA9F90045F84F /* PDMockServerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC92EF7E205BA9F90045F84F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC92EF90205BA9F90045F84F /* LaunchScreen.storyboard in Resources */,
+				EC92EF8D205BA9F90045F84F /* Assets.xcassets in Resources */,
+				EC92EF8B205BA9F90045F84F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC92EF96205BA9F90045F84F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC92EFA1205BA9F90045F84F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC92EF7C205BA9F90045F84F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC92EF88205BA9F90045F84F /* ViewController.m in Sources */,
+				EC92EF93205BA9F90045F84F /* main.m in Sources */,
+				EC92EF85205BA9F90045F84F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC92EF94205BA9F90045F84F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC92EF9D205BA9F90045F84F /* PDMockServerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC92EF9F205BA9F90045F84F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC92EFA8205BA9F90045F84F /* PDMockServerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC92EF9A205BA9F90045F84F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC92EF7F205BA9F90045F84F /* PDMockServer */;
+			targetProxy = EC92EF99205BA9F90045F84F /* PBXContainerItemProxy */;
+		};
+		EC92EFA5205BA9F90045F84F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC92EF7F205BA9F90045F84F /* PDMockServer */;
+			targetProxy = EC92EFA4205BA9F90045F84F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC92EF89205BA9F90045F84F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC92EF8A205BA9F90045F84F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC92EF8E205BA9F90045F84F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC92EF8F205BA9F90045F84F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC92EFAA205BA9F90045F84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC92EFAB205BA9F90045F84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC92EFAD205BA9F90045F84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PDMockServer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PipeDog.PDMockServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC92EFAE205BA9F90045F84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PDMockServer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PipeDog.PDMockServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC92EFB0205BA9F90045F84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PDMockServerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PipeDog.PDMockServerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PDMockServer.app/PDMockServer";
+			};
+			name = Debug;
+		};
+		EC92EFB1205BA9F90045F84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PDMockServerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PipeDog.PDMockServerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PDMockServer.app/PDMockServer";
+			};
+			name = Release;
+		};
+		EC92EFB3205BA9F90045F84F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PDMockServerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PipeDog.PDMockServerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PDMockServer;
+			};
+			name = Debug;
+		};
+		EC92EFB4205BA9F90045F84F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PDMockServerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PipeDog.PDMockServerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PDMockServer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC92EF7B205BA9F90045F84F /* Build configuration list for PBXProject "PDMockServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC92EFAA205BA9F90045F84F /* Debug */,
+				EC92EFAB205BA9F90045F84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC92EFAC205BA9F90045F84F /* Build configuration list for PBXNativeTarget "PDMockServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC92EFAD205BA9F90045F84F /* Debug */,
+				EC92EFAE205BA9F90045F84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC92EFAF205BA9F90045F84F /* Build configuration list for PBXNativeTarget "PDMockServerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC92EFB0205BA9F90045F84F /* Debug */,
+				EC92EFB1205BA9F90045F84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC92EFB2205BA9F90045F84F /* Build configuration list for PBXNativeTarget "PDMockServerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC92EFB3205BA9F90045F84F /* Debug */,
+				EC92EFB4205BA9F90045F84F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC92EF78205BA9F90045F84F /* Project object */;
+}
