@@ -17,8 +17,8 @@ typedef PDMockResponse * _Nonnull (^PDMockResponseHandler)(__kindof NSURLRequest
 
 @interface PDMockAction : NSObject
 
-@property (nonatomic, copy, nonnull) PDMockRequestCondition condition;
-@property (nonatomic, copy, nonnull) PDMockResponseHandler handler;
+@property (nonatomic, copy) PDMockRequestCondition condition;
+@property (nonatomic, copy) PDMockResponseHandler handler;
 
 + (instancetype)actionWithRequestCondition:(PDMockRequestCondition)condition responseHandler:(PDMockResponseHandler)handler;
 
