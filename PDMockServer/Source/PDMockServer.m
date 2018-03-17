@@ -41,16 +41,19 @@
 }
 
 - (void)switchEnabled:(BOOL)enabled {
+    Lock();
     if (enabled) {
         [NSURLProtocol registerClass:[PDMockURLProtocol class]];
     } else {
         [NSURLProtocol unregisterClass:[PDMockURLProtocol class]];
     }
+    Unlock();
 }
 
 - (void)switchEnabled:(BOOL)enabled forSessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration {
     if (!sessionConfiguration) return;
 
+    Lock();
     NSMutableArray<Class> *protocolClasses = [NSMutableArray arrayWithArray:sessionConfiguration.protocolClasses];
     Class mockProtocolClass = [PDMockURLProtocol class];
 
@@ -60,6 +63,7 @@
         [protocolClasses removeObject:mockProtocolClass];
     }
     sessionConfiguration.protocolClasses = [protocolClasses copy];
+    Unlock();
 }
 
 - (void)registerMockHosts:(NSArray<NSString *> * (^)(void))hosts {
