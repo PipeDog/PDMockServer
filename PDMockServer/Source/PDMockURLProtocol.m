@@ -62,17 +62,20 @@ static NSString *const kProtocolKey = @"kProtocolKey";
     id<NSURLProtocolClient> client = self.client;
     
     PDMockResponse *mockResponse = self.action.handler(request);
-    NSData *data = mockResponse.data;
-    NSTimeInterval delay = mockResponse.delay;
+    NSData *mockData = mockResponse.data;
+    NSTimeInterval mockDelay = mockResponse.delay;
+    NSError *mockError = mockResponse.error;
 
     NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:request.URL
-                                                              statusCode:(data ? 200 : 400)
+                                                              statusCode:(mockData ? 200 : 400)
                                                              HTTPVersion:nil
                                                             headerFields:nil];
     dispatch_block_t perform = ^{
-        if (data) {
+        if (mockError) {
+            [client URLProtocol:self didFailWithError:mockError];
+        } else if (mockData) {
             [client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-            [client URLProtocol:self didLoadData:data];
+            [client URLProtocol:self didLoadData:mockData];
             [client URLProtocolDidFinishLoading:self];
         } else {
             NSError *error = [NSError errorWithDomain:@"PDMockServerNoResponseData" code:-100 userInfo:@{@"PDErrorFailingURLStringKey": request.URL.absoluteString, @"PDErrorFailingReason": @"No response data."}];
@@ -80,8 +83,8 @@ static NSString *const kProtocolKey = @"kProtocolKey";
         }
     };
     
-    if (delay > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), perform);
+    if (mockDelay > 0) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(mockDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), perform);
     } else {
         perform();
     }
