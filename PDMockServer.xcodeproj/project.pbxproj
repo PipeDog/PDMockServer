@@ -19,9 +19,7 @@
 		EC92EFBE205BCAF30045F84F /* PDMockServer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFBD205BCAF30045F84F /* PDMockServer.m */; };
 		EC92EFCA205BCD990045F84F /* PDMockResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFC9205BCD990045F84F /* PDMockResponse.m */; };
 		EC92EFD4205BE32D0045F84F /* PDMockAction.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFD3205BE32D0045F84F /* PDMockAction.m */; };
-		EC92EFD7205C19E00045F84F /* NSDictionary+PDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFD6205C19E00045F84F /* NSDictionary+PDAdd.m */; };
-		EC92EFDA205C1A020045F84F /* NSString+PDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFD9205C1A020045F84F /* NSString+PDAdd.m */; };
-		EC92EFDD205C1A2A0045F84F /* NSData+PDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFDC205C1A2A0045F84F /* NSData+PDAdd.m */; };
+		EC92EFE3205F69ED0045F84F /* PDDataProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EFE2205F69ED0045F84F /* PDDataProcess.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +64,8 @@
 		EC92EFC9205BCD990045F84F /* PDMockResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMockResponse.m; sourceTree = "<group>"; };
 		EC92EFD2205BE32D0045F84F /* PDMockAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMockAction.h; sourceTree = "<group>"; };
 		EC92EFD3205BE32D0045F84F /* PDMockAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMockAction.m; sourceTree = "<group>"; };
-		EC92EFD5205C19E00045F84F /* NSDictionary+PDAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PDAdd.h"; sourceTree = "<group>"; };
-		EC92EFD6205C19E00045F84F /* NSDictionary+PDAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PDAdd.m"; sourceTree = "<group>"; };
-		EC92EFD8205C1A020045F84F /* NSString+PDAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PDAdd.h"; sourceTree = "<group>"; };
-		EC92EFD9205C1A020045F84F /* NSString+PDAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PDAdd.m"; sourceTree = "<group>"; };
-		EC92EFDB205C1A2A0045F84F /* NSData+PDAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+PDAdd.h"; sourceTree = "<group>"; };
-		EC92EFDC205C1A2A0045F84F /* NSData+PDAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+PDAdd.m"; sourceTree = "<group>"; };
+		EC92EFE1205F69ED0045F84F /* PDDataProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDDataProcess.h; sourceTree = "<group>"; };
+		EC92EFE2205F69ED0045F84F /* PDDataProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDDataProcess.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,16 +155,12 @@
 				EC92EFBA205BCAE80045F84F /* PDMockURLProtocol.m */,
 				EC92EFBC205BCAF30045F84F /* PDMockServer.h */,
 				EC92EFBD205BCAF30045F84F /* PDMockServer.m */,
-				EC92EFC8205BCD990045F84F /* PDMockResponse.h */,
-				EC92EFC9205BCD990045F84F /* PDMockResponse.m */,
 				EC92EFD2205BE32D0045F84F /* PDMockAction.h */,
 				EC92EFD3205BE32D0045F84F /* PDMockAction.m */,
-				EC92EFD5205C19E00045F84F /* NSDictionary+PDAdd.h */,
-				EC92EFD6205C19E00045F84F /* NSDictionary+PDAdd.m */,
-				EC92EFD8205C1A020045F84F /* NSString+PDAdd.h */,
-				EC92EFD9205C1A020045F84F /* NSString+PDAdd.m */,
-				EC92EFDB205C1A2A0045F84F /* NSData+PDAdd.h */,
-				EC92EFDC205C1A2A0045F84F /* NSData+PDAdd.m */,
+				EC92EFC8205BCD990045F84F /* PDMockResponse.h */,
+				EC92EFC9205BCD990045F84F /* PDMockResponse.m */,
+				EC92EFE1205F69ED0045F84F /* PDDataProcess.h */,
+				EC92EFE2205F69ED0045F84F /* PDDataProcess.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -308,15 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC92EFDD205C1A2A0045F84F /* NSData+PDAdd.m in Sources */,
+				EC92EFE3205F69ED0045F84F /* PDDataProcess.m in Sources */,
 				EC92EFBE205BCAF30045F84F /* PDMockServer.m in Sources */,
 				EC92EF88205BA9F90045F84F /* ViewController.m in Sources */,
-				EC92EFDA205C1A020045F84F /* NSString+PDAdd.m in Sources */,
 				EC92EFCA205BCD990045F84F /* PDMockResponse.m in Sources */,
 				EC92EFBB205BCAE80045F84F /* PDMockURLProtocol.m in Sources */,
 				EC92EF93205BA9F90045F84F /* main.m in Sources */,
 				EC92EFD4205BE32D0045F84F /* PDMockAction.m in Sources */,
-				EC92EFD7205C19E00045F84F /* NSDictionary+PDAdd.m in Sources */,
 				EC92EF85205BA9F90045F84F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
