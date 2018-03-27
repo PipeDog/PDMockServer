@@ -13,6 +13,8 @@
 
 @interface ViewController () <NSURLSessionDelegate>
 
+@property (nonatomic, strong) NSURLSessionConfiguration *sessionConfiguration;
+
 @end
 
 @implementation ViewController
@@ -21,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [[PDMockServer defaultServer] switchEnabled:YES];
+    [[PDMockServer defaultServer] switchEnabled:YES forSessionConfiguration:self.sessionConfiguration];
 
     [PDMockServer.defaultServer registerMockHosts:^NSArray<NSString *> * _Nonnull{
         return @[@"https://www.baidu.com",
@@ -39,7 +42,7 @@
             response.dict = @{@"name": @"liang",
                               @"age": @26};
             response.error = nil;
-            response.delay = 3.f;
+            response.delay = 1.f;
         }];
     }];
     [PDMockServer.defaultServer registerAction:action forPath:@"/a/1190000002933776"];
@@ -50,11 +53,8 @@
 
     NSURL *URL = [NSURL URLWithString:@"https://segmentfault.com/a/1190000002933776"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-
-    NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    [[PDMockServer defaultServer] switchEnabled:YES forSessionConfiguration:defaultSessionConfiguration];
     
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultSessionConfiguration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:self.sessionConfiguration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     
     NSURLSessionTask *sessionTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
@@ -79,6 +79,14 @@
             NSLog(@"response = (%@), dict = (%@)", response, [data toDictionary]);
         }
     }];
+}
+
+#pragma mark - Getter Methods
+- (NSURLSessionConfiguration *)sessionConfiguration {
+    if (!_sessionConfiguration) {
+        _sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    }
+    return _sessionConfiguration;
 }
 
 @end
