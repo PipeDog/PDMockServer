@@ -78,7 +78,9 @@ static NSString *const kProtocolKey = @"kProtocolKey";
             [client URLProtocol:self didLoadData:mockData];
             [client URLProtocolDidFinishLoading:self];
         } else {
-            NSError *error = [NSError errorWithDomain:@"PDMockServerNoResponseData" code:-100 userInfo:@{@"PDErrorFailingURLStringKey": request.URL.absoluteString, @"PDErrorFailingReason": @"No response data."}];
+            NSDictionary *userInfo = @{@"PDErrorFailingURLStringKey": request.URL.absoluteString,
+                                       @"PDErrorFailingReason": @"No response data."};
+            NSError *error = [NSError errorWithDomain:@"PDMockServerNoResponseData" code:-100 userInfo:userInfo];
             [client URLProtocol:self didFailWithError:error];
         }
     };
