@@ -8,9 +8,16 @@
 
 #import "PDMockServer.h"
 #import "PDMockURLProtocol.h"
+#import "PDHooker.h"
 
 #define Lock() dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER)
 #define Unlock() dispatch_semaphore_signal(self->_lock)
+
+@interface NSURLSessionConfiguration (PDAdd)
+
++ (void)switchEnabled:(BOOL)enabled;
+
+@end
 
 @interface PDMockServer () {
     dispatch_semaphore_t _lock;
@@ -47,6 +54,8 @@
     } else {
         [NSURLProtocol unregisterClass:[PDMockURLProtocol class]];
     }
+    
+    [NSURLSessionConfiguration switchEnabled:enabled];
     Unlock();
 }
 
@@ -139,6 +148,47 @@
         _actions = [NSMutableDictionary dictionary];
     }
     return _actions;
+}
+
+@end
+
+@implementation NSURLSessionConfiguration (PDAdd)
+
+static BOOL kMockEnabled = NO;
+
++ (void)switchEnabled:(BOOL)enabled {
+    if (kMockEnabled == enabled) return;
+    
+    kMockEnabled = enabled;
+    Class cls = [NSURLSessionConfiguration class];
+    
+    class_exchangeClassMethod(cls,
+                              @selector(defaultSessionConfiguration),
+                              @selector(pd_defaultSessionConfiguration));
+    class_exchangeClassMethod(cls,
+                              @selector(ephemeralSessionConfiguration),
+                              @selector(pd_ephemeralSessionConfiguration));
+    class_exchangeClassMethod(cls,
+                              @selector(backgroundSessionConfigurationWithIdentifier:),
+                              @selector(pd_backgroundSessionConfigurationWithIdentifier:));
+}
+
++ (NSURLSessionConfiguration *)pd_defaultSessionConfiguration {
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration pd_defaultSessionConfiguration];
+    [PDMockServer.defaultServer switchEnabled:YES forSessionConfiguration:sessionConfiguration];
+    return sessionConfiguration;
+}
+
++ (NSURLSessionConfiguration *)pd_ephemeralSessionConfiguration {
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration pd_ephemeralSessionConfiguration];
+    [PDMockServer.defaultServer switchEnabled:YES forSessionConfiguration:sessionConfiguration];
+    return sessionConfiguration;
+}
+
++ (NSURLSessionConfiguration *)pd_backgroundSessionConfigurationWithIdentifier:(NSString *)identifier {
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration pd_backgroundSessionConfigurationWithIdentifier:identifier];
+    [PDMockServer.defaultServer switchEnabled:YES forSessionConfiguration:sessionConfiguration];
+    return sessionConfiguration;
 }
 
 @end

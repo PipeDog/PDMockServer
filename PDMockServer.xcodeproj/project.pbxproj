@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC6EFC1620861DCC006FC4EF /* PDHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EFC1520861DCC006FC4EF /* PDHooker.m */; };
 		EC92EF85205BA9F90045F84F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF84205BA9F90045F84F /* AppDelegate.m */; };
 		EC92EF88205BA9F90045F84F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF87205BA9F90045F84F /* ViewController.m */; };
 		EC92EF8B205BA9F90045F84F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC92EF89205BA9F90045F84F /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC6EFC1420861DCC006FC4EF /* PDHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDHooker.h; sourceTree = "<group>"; };
+		EC6EFC1520861DCC006FC4EF /* PDHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDHooker.m; sourceTree = "<group>"; };
 		EC92EF80205BA9F90045F84F /* PDMockServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDMockServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC92EF83205BA9F90045F84F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC92EF84205BA9F90045F84F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				EC92EFC9205BCD990045F84F /* PDMockResponse.m */,
 				EC92EFE1205F69ED0045F84F /* PDDataProcess.h */,
 				EC92EFE2205F69ED0045F84F /* PDDataProcess.m */,
+				EC6EFC1420861DCC006FC4EF /* PDHooker.h */,
+				EC6EFC1520861DCC006FC4EF /* PDHooker.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				EC92EFBE205BCAF30045F84F /* PDMockServer.m in Sources */,
 				EC92EF88205BA9F90045F84F /* ViewController.m in Sources */,
 				EC92EFCA205BCD990045F84F /* PDMockResponse.m in Sources */,
+				EC6EFC1620861DCC006FC4EF /* PDHooker.m in Sources */,
 				EC92EFBB205BCAE80045F84F /* PDMockURLProtocol.m in Sources */,
 				EC92EF93205BA9F90045F84F /* main.m in Sources */,
 				EC92EFD4205BE32D0045F84F /* PDMockAction.m in Sources */,

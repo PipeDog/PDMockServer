@@ -16,8 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (class, strong, readonly) PDMockServer *defaultServer;
 
-- (void)switchEnabled:(BOOL)enabled; // NSURLConnection request call method.
-- (void)switchEnabled:(BOOL)enabled forSessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration; // NSURLSession request call method, param sessionConfiguration must be same object with used to build NSURLSession.
+- (void)switchEnabled:(BOOL)enabled;
 
 - (void)registerMockHosts:(NSArray<NSString *> * (^)(void))hosts;
 - (NSArray<NSString *> *)allMockHosts;
