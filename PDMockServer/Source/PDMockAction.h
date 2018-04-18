@@ -20,9 +20,13 @@ typedef PDMockResponse * _Nonnull (^PDMockResponseHandler)(__kindof NSURLRequest
 @property (nonatomic, copy) PDMockRequestCondition condition;
 @property (nonatomic, copy) PDMockResponseHandler handler;
 
-+ (instancetype)actionWithRequestCondition:(PDMockRequestCondition)condition responseHandler:(PDMockResponseHandler)handler;
++ (instancetype)actionWithResponseHandler:(PDMockResponseHandler)handler;
 
-- (instancetype)initWithRequestCondition:(PDMockRequestCondition)condition responseHandler:(PDMockResponseHandler)handler;
++ (instancetype)actionWithRequestCondition:(PDMockRequestCondition)condition
+                           responseHandler:(PDMockResponseHandler)handler;
+
+- (instancetype)initWithRequestCondition:(PDMockRequestCondition)condition
+                         responseHandler:(PDMockResponseHandler)handler;
 
 @end
 

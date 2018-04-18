@@ -26,9 +26,7 @@
                  @"http://192.168.50.23"];
     }];
     
-    [[PDMockServer defaultServer] registerAction:[PDMockAction actionWithRequestCondition:^BOOL(__kindof NSURLRequest * _Nullable request) {
-        return YES;
-    } responseHandler:^PDMockResponse * _Nonnull(__kindof NSURLRequest * _Nullable request) {
+    [[PDMockServer defaultServer] registerAction:[PDMockAction actionWithResponseHandler:^PDMockResponse * _Nonnull(__kindof NSURLRequest * _Nullable request) {
         return [PDMockResponse make:^(PDMockResponse * _Nonnull response) {
             response.dict = @{@"name": @"liang",
                               @"age": @26};
