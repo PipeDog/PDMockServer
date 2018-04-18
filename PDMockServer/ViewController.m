@@ -20,20 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    [[PDMockServer defaultServer] switchEnabled:YES];
-//    [[PDMockServer defaultServer] switchEnabled:YES forSessionConfiguration:self.sessionConfiguration];
-
     [PDMockServer.defaultServer registerMockHosts:^NSArray<NSString *> * _Nonnull{
         return @[@"https://www.baidu.com",
                  @"https://segmentfault.com",
                  @"http://192.168.50.23"];
     }];
     
-    [self registerHookRequestAction];
-}
-
-- (void)registerHookRequestAction {
-    PDMockAction *action = [PDMockAction actionWithRequestCondition:^BOOL(__kindof NSURLRequest * _Nullable request) {
+    [[PDMockServer defaultServer] registerAction:[PDMockAction actionWithRequestCondition:^BOOL(__kindof NSURLRequest * _Nullable request) {
         return YES;
     } responseHandler:^PDMockResponse * _Nonnull(__kindof NSURLRequest * _Nullable request) {
         return [PDMockResponse make:^(PDMockResponse * _Nonnull response) {
@@ -42,8 +35,7 @@
             response.error = nil;
             response.delay = 1.f;
         }];
-    }];
-    [PDMockServer.defaultServer registerAction:action forPath:@"/a/1190000002933776"];
+    }] forPath:@"/a/1190000002933776"];
 }
 
 - (IBAction)sendRequestByURLSession:(id)sender {
