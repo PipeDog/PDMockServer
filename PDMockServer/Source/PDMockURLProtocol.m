@@ -25,12 +25,11 @@ static NSString *const kProtocolKey = @"kProtocolKey";
         return NO;
     }
     // Verify that host is registered.
-    NSString *host = request.URL.host;
     BOOL registeredHost = NO;
     NSArray<NSString *> *allMockHosts = [PDMockServer.defaultServer allMockHosts];
     
     for (NSString *mockHost in allMockHosts) {
-        if ([mockHost rangeOfString:host].location != NSNotFound) {
+        if ([request.URL.absoluteString hasPrefix:mockHost]) {
             registeredHost = YES;
             break;
         }
