@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXTERN
+FOUNDATION_EXPORT
 void class_exchangeInstanceMethod(Class cls, SEL originalSEL, SEL replaceSEL);
 
-FOUNDATION_EXTERN
+FOUNDATION_EXPORT
 void class_exchangeClassMethod(Class cls, SEL originalSEL, SEL replaceSEL);
