@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC196E492088925200B8A868 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = EC196E482088925200B8A868 /* mock.json */; };
 		EC6EFC1620861DCC006FC4EF /* PDHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6EFC1520861DCC006FC4EF /* PDHooker.m */; };
 		EC92EF85205BA9F90045F84F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF84205BA9F90045F84F /* AppDelegate.m */; };
 		EC92EF88205BA9F90045F84F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC92EF87205BA9F90045F84F /* ViewController.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC196E482088925200B8A868 /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
 		EC6EFC1420861DCC006FC4EF /* PDHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDHooker.h; sourceTree = "<group>"; };
 		EC6EFC1520861DCC006FC4EF /* PDHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDHooker.m; sourceTree = "<group>"; };
 		EC92EF80205BA9F90045F84F /* PDMockServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDMockServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				EC92EF84205BA9F90045F84F /* AppDelegate.m */,
 				EC92EF86205BA9F90045F84F /* ViewController.h */,
 				EC92EF87205BA9F90045F84F /* ViewController.m */,
+				EC196E482088925200B8A868 /* mock.json */,
 				EC92EF89205BA9F90045F84F /* Main.storyboard */,
 				EC92EF8C205BA9F90045F84F /* Assets.xcassets */,
 				EC92EF8E205BA9F90045F84F /* LaunchScreen.storyboard */,
@@ -279,6 +282,7 @@
 				EC92EF90205BA9F90045F84F /* LaunchScreen.storyboard in Resources */,
 				EC92EF8D205BA9F90045F84F /* Assets.xcassets in Resources */,
 				EC92EF8B205BA9F90045F84F /* Main.storyboard in Resources */,
+				EC196E492088925200B8A868 /* mock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

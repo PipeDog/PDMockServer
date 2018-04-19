@@ -28,8 +28,7 @@
     
     [[PDMockServer defaultServer] registerAction:[PDMockAction actionWithResponseHandler:^PDMockResponse * _Nonnull(__kindof NSURLRequest * _Nullable request) {
         return [PDMockResponse make:^(PDMockResponse * _Nonnull response) {
-            response.dict = @{@"name": @"liang",
-                              @"age": @26};
+            response.path = [[NSBundle mainBundle] pathForResource:@"mock" ofType:@"json"];
             response.error = nil;
             response.delay = 1.f;
         }];
