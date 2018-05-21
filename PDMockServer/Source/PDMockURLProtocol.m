@@ -39,7 +39,7 @@ static NSString *const kProtocolKey = @"kProtocolKey";
     // Verify the request is registered.
     PDMockAction *action = [PDMockServer.defaultServer actionForPath:request.URL.path];
     // Check condition.
-    return action.condition(request);
+    return (action.condition ? action.condition(request) : NO);
 }
 
 - (instancetype)initWithRequest:(NSURLRequest *)request cachedResponse:(NSCachedURLResponse *)cachedResponse client:(id<NSURLProtocolClient>)client {
