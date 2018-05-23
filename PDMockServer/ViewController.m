@@ -101,7 +101,6 @@
         }];
     } else if (indexPath.row == 4) {
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         
         [manager GET:@"https://segmentfault.com/a/1190000002933776" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
