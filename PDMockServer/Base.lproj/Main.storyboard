@@ -18,70 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJ9-HT-222">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.45159995720000001" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="pzL-4e-bwU"/>
-                                </constraints>
-                                <state key="normal" title="URLConnection"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="03n-SH-DxM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="sendRequestByURLConnection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0SV-0M-c38"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="S7F-Ae-FWI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HPo-zR-EsF"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD3-tX-7zR">
-                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6nN-Fi-Hvc"/>
-                                </constraints>
-                                <state key="normal" title="URLSession"/>
-                                <connections>
-                                    <action selector="sendRequestByURLSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJ3-xz-Srj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQ5-jg-ky4">
-                                <rect key="frame" x="0.0" y="519" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.45159995720000001" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="fqu-9d-IdT"/>
-                                    <constraint firstAttribute="height" constant="50" id="jC0-bP-Mfp"/>
-                                </constraints>
-                                <state key="normal" title="Unenable"/>
-                                <connections>
-                                    <action selector="didClickUnenableButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CTw-Sq-Z3d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-pe-IFK">
-                                <rect key="frame" x="0.0" y="469" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="0.4528842038" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="4mE-Ef-aPS"/>
-                                    <constraint firstAttribute="height" constant="50" id="c0S-JQ-exA"/>
-                                </constraints>
-                                <state key="normal" title="Enable"/>
-                                <connections>
-                                    <action selector="didClickEnableButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b87-Ug-2kV"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hJ9-HT-222" firstAttribute="top" secondItem="pQ5-jg-ky4" secondAttribute="bottom" constant="48" id="0ks-lp-hCl"/>
-                            <constraint firstItem="pQ5-jg-ky4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H7t-3V-NGK"/>
-                            <constraint firstItem="RD3-tX-7zR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Je6-Gg-6Aj"/>
-                            <constraint firstItem="pQ5-jg-ky4" firstAttribute="top" secondItem="h9l-pe-IFK" secondAttribute="bottom" id="NCW-OA-Sfl"/>
-                            <constraint firstItem="hJ9-HT-222" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P8C-Xp-VJH"/>
-                            <constraint firstItem="h9l-pe-IFK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QvZ-z4-IJ8"/>
-                            <constraint firstItem="hJ9-HT-222" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UM7-ll-UxU"/>
-                            <constraint firstItem="pQ5-jg-ky4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Unk-Zt-vy0"/>
-                            <constraint firstItem="h9l-pe-IFK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lss-PE-3wv"/>
-                            <constraint firstItem="RD3-tX-7zR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nJP-ZC-aUk"/>
-                            <constraint firstItem="hJ9-HT-222" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rZc-41-ndZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RD3-tX-7zR" secondAttribute="bottom" constant="49" id="u4h-ga-U8v"/>
+                            <constraint firstItem="03n-SH-DxM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7nI-1p-bqa"/>
+                            <constraint firstItem="03n-SH-DxM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BVe-5F-csK"/>
+                            <constraint firstItem="03n-SH-DxM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="O1n-Jr-5Fz"/>
+                            <constraint firstItem="03n-SH-DxM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vgw-fs-5VX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="03n-SH-DxM" id="v3a-Nw-ZeY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
