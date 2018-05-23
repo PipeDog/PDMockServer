@@ -85,7 +85,11 @@ static NSString *const kProtocolKey = @"kProtocolKey";
     };
     
     if (mockDelay > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(mockDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), perform);
+        NSThread *currentThread = [NSThread currentThread];
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(mockDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self executeThread:currentThread block:perform];
+        });
     } else {
         perform();
     }
@@ -93,6 +97,19 @@ static NSString *const kProtocolKey = @"kProtocolKey";
 
 - (void)stopLoading {
     _action = nil;
+}
+
+#pragma mark - Tool Methods
+- (void)executeBlock:(dispatch_block_t)block {
+    if (block) block();
+}
+
+- (void)executeThread:(NSThread *)thread block:(dispatch_block_t)block {
+    if (thread == [NSThread currentThread]) {
+        if (block) block();
+    } else {
+        [self performSelector:@selector(executeBlock:) onThread:thread withObject:[block copy] waitUntilDone:NO];
+    }
 }
 
 @end
