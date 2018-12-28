@@ -9,9 +9,10 @@
 #import "PDMockServer.h"
 #import "PDMockURLProtocol.h"
 #import "PDHooker.h"
+#include <pthread.h>
 
-#define Lock() dispatch_semaphore_wait(self->_lock, DISPATCH_TIME_FOREVER)
-#define Unlock() dispatch_semaphore_signal(self->_lock)
+#define Lock() pthread_mutex_lock(&self->_lock)
+#define Unlock() pthread_mutex_unlock(&self->_lock)
 
 @interface NSURLSessionConfiguration (PDAdd)
 
@@ -20,7 +21,7 @@
 @end
 
 @interface PDMockServer () {
-    dispatch_semaphore_t _lock;
+    pthread_mutex_t _lock;
 }
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *mockHosts;
@@ -39,10 +40,14 @@
     return __defaultServer;
 }
 
+- (void)dealloc {
+    pthread_mutex_destroy(&self->_lock);
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _lock = dispatch_semaphore_create(1);
+        pthread_mutex_init(&self->_lock, NULL);
     }
     return self;
 }
