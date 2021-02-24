@@ -8,57 +8,66 @@
 
 #import "PDDataProcess.h"
 
-@implementation NSDictionary (PDAdd)
-
-- (NSString *)toJSONString {
-    NSString *JSONString;
-    NSError *error;
-    // Pass 0 if you don't care about the readability of the generated string
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error];
-    if (!jsonData) {
-        NSLog(@"NSDictionary parse to JSONString failed, error = (%@).", error);
-    } else {
-        JSONString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+id PDValueToJSONObject(id value) {
+    if (!value || [value isKindOfClass:[NSNull class]]) {
+        return nil;
     }
-    return JSONString;
+
+    // NSString, NSNumber, NSArray, NSDictionary, or NSNull
+    if ([NSJSONSerialization isValidJSONObject:value]) {
+        return value;
+    }
+    
+    if ([value isKindOfClass:[NSData class]]) {
+        NSJSONReadingOptions options = (NSJSONReadingMutableContainers |
+                                        NSJSONReadingMutableLeaves |
+                                        NSJSONReadingAllowFragments);
+        id JSONObject = [NSJSONSerialization JSONObjectWithData:value options:options  error:nil];
+        return JSONObject;
+    }
+    
+    if ([value isKindOfClass:[NSString class]]) {
+        NSData *data = [value dataUsingEncoding:NSUTF8StringEncoding];
+        NSJSONReadingOptions options = (NSJSONReadingMutableContainers |
+                                        NSJSONReadingMutableLeaves |
+                                        NSJSONReadingAllowFragments);
+        id JSONObject = [NSJSONSerialization JSONObjectWithData:data options:options error:nil];
+        return JSONObject;
+    }
+    
+    NSString *fmt = [NSString stringWithFormat:@"Invalid `value` type : %@", [value class]];
+    NSCAssert(NO, fmt);
+    return nil;
 }
 
-- (NSData *)toData {
-    NSError *error;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error];
-    if (error) NSLog(@"NSDictionary parse to NSData failed, error = (%@).", error);
-    return data;
+NSData *PDValueToData(id value) {
+    if (!value || [value isKindOfClass:[NSNull class]]) {
+        return nil;
+    }
+
+    if ([value isKindOfClass:[NSData class]]) {
+        NSData *data = value;
+        return data;
+    }
+    
+    if ([value isKindOfClass:[NSString class]]) {
+        NSData *data = [value dataUsingEncoding:NSUTF8StringEncoding];
+        return data;
+    }
+        
+    // NSString, NSNumber, NSArray, NSDictionary, or NSNull
+    if ([NSJSONSerialization isValidJSONObject:value]) {
+        NSData *data = [NSJSONSerialization dataWithJSONObject:value options:NSJSONWritingPrettyPrinted error:nil];
+        return data;
+    }
+    
+    NSString *fmt = [NSString stringWithFormat:@"Invalid `value` type : %@", [value class]];
+    NSCAssert(NO, fmt);
+    return nil;
 }
 
-@end
-
-@implementation NSString (PDAdd)
-
-- (NSDictionary *)toDictionary {
-    NSData *JSONData = [self dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:&error];
-    if (error) NSLog(@"NSString parse to NSDictionary failed, error = (%@).", error);
-    return dict;
+NSString *PDValueToJSONText(id value) {
+    NSData *JSONData = PDValueToData(value);
+    NSString *JSONText = JSONData ? [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding] : nil;
+    return JSONText;
 }
-
-- (NSData *)toData {
-    return [self dataUsingEncoding:NSUTF8StringEncoding];
-}
-
-@end
-
-@implementation NSData (PDAdd)
-
-- (NSDictionary *)toDictionary {
-    NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingMutableContainers error:&error];
-    if (error) NSLog(@"NSData parse to NSDictionary failed, error = (%@).", error);
-    return dict;
-}
-
-- (NSString *)toJSONString {
-    return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
-}
-
-@end

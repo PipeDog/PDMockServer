@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PDMockResponse : NSObject
+@protocol PDMockResponse <NSObject>
 
 @property (nonatomic, strong, nullable) NSData *data; ///< Response data.
 @property (nonatomic, copy, nullable) NSString *path; ///< Response file local path.
@@ -19,7 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSError *error; ///< Response error.
 @property (nonatomic, assign) NSTimeInterval delay; ///< Response delay (seconds), default is 0s.
 
-+ (instancetype)make:(void (^)(PDMockResponse *response))make;
+@end
+
+@interface PDMockResponse : NSObject <PDMockResponse>
+
++ (instancetype)responseWithBuilder:(void (^)(id<PDMockResponse> builder))block;
 
 @end
 

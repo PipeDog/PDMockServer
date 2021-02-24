@@ -10,28 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary (PDAdd)
-
-- (NSString * _Nullable)toJSONString;
-
-- (NSData * _Nullable)toData;
-
-@end
-
-@interface NSString (PDAdd)
-
-- (NSDictionary * _Nullable)toDictionary;
-
-- (NSData * _Nullable)toData;
-
-@end
-
-@interface NSData (PDAdd)
-
-- (NSDictionary * _Nullable)toDictionary;
-
-- (NSString * _Nullable)toJSONString;
-
-@end
+FOUNDATION_EXPORT id _Nullable PDValueToJSONObject(id value);
+FOUNDATION_EXPORT NSData * _Nullable PDValueToData(id value);
+FOUNDATION_EXPORT NSString * _Nullable PDValueToJSONText(id value);
 
 NS_ASSUME_NONNULL_END

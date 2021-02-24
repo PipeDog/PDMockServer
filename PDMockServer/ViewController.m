@@ -35,10 +35,10 @@
     }];
     
     [[PDMockServer defaultServer] registerAction:[PDMockAction actionWithResponseHandler:^PDMockResponse * _Nonnull(__kindof NSURLRequest * _Nullable request) {
-        return [PDMockResponse make:^(PDMockResponse * _Nonnull response) {
-            response.path = [[NSBundle mainBundle] pathForResource:@"mock" ofType:@"json"];
-            response.error = nil;
-            response.delay = 1.f;
+        return [PDMockResponse responseWithBuilder:^(id<PDMockResponse>  _Nonnull builder) {
+            builder.path = [[NSBundle mainBundle] pathForResource:@"mock" ofType:@"json"];
+            builder.error = nil;
+            builder.delay = 1.f;
         }];
     }] forPath:@"/a/1190000002933776"];
 }
@@ -84,7 +84,7 @@
             if (error) {
                 NSLog(@"error = %@", error);
             } else {
-                NSLog(@"response = (%@), dict = (%@)", response, [data toDictionary]);
+                NSLog(@"response = (%@), dict = (%@)", response, PDValueToJSONObject(data));
             }
         }];
         [sessionTask resume];
@@ -96,7 +96,7 @@
             if (connectionError) {
                 NSLog(@"error = %@", connectionError);
             } else {
-                NSLog(@"response = (%@), dict = (%@)", response, [data toDictionary]);
+                NSLog(@"response = (%@), dict = (%@)", response, PDValueToJSONObject(data));
             }
         }];
     } else if (indexPath.row == 4) {

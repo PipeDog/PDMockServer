@@ -11,12 +11,16 @@
 
 @implementation PDMockResponse
 
+@synthesize data = _data;
+@synthesize path = _path;
 @synthesize dict = _dict;
 @synthesize JSONString = _JSONString;
+@synthesize error = _error;
+@synthesize delay = _delay;
 
-+ (instancetype)make:(void (^)(PDMockResponse * _Nonnull))make {
-    PDMockResponse *response = [[PDMockResponse alloc] init];
-    if (make) make(response);
++ (instancetype)responseWithBuilder:(void (^)(id<PDMockResponse> _Nonnull))block {
+    id<PDMockResponse> response = [[self alloc] init];
+    !block ?: block(response);
     return response;
 }
 
@@ -30,12 +34,12 @@
 
 - (void)setDict:(NSDictionary *)dict {
     _dict = [dict copy];
-    _data = [_dict toData];
+    _data = PDValueToData(_dict);
 }
 
 - (void)setJSONString:(NSString *)JSONString {
     _JSONString = [JSONString copy];
-    _data = [_JSONString toData];
+    _data = PDValueToData(_JSONString);
 }
 
 - (void)setDelay:(NSTimeInterval)delay {
@@ -47,9 +51,9 @@
 - (NSDictionary *)dict {
     if (!_dict) {
         if (self.data) {
-            _dict = [self.data toDictionary];
+            _dict = PDValueToJSONObject(self.data);
         } else if (self.JSONString) {
-            _dict = [self.JSONString toDictionary];
+            _dict = PDValueToJSONObject(self.data);
         }
     }
     return _dict;
@@ -58,9 +62,9 @@
 - (NSString *)JSONString {
     if (!_JSONString) {
         if (self.data) {
-            _JSONString = [self.data toJSONString];
+            _JSONString = PDValueToJSONText(self.data);
         } else if (self.dict) {
-            _JSONString = [self.dict toJSONString];
+            _JSONString = PDValueToJSONText(self.dict);
         }
     }
     return _JSONString;

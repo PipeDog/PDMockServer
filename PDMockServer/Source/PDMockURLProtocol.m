@@ -10,7 +10,7 @@
 #import "PDMockServer.h"
 #import "PDMockResponse.h"
 
-static NSString *const kProtocolKey = @"kProtocolKey";
+static NSString *const kPDMockURLProtocol = @"kPDMockURLProtocol";
 
 @interface PDMockURLProtocol ()
 
@@ -21,7 +21,7 @@ static NSString *const kProtocolKey = @"kProtocolKey";
 @implementation PDMockURLProtocol
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
-    if ([NSURLProtocol propertyForKey:kProtocolKey inRequest:request]) {
+    if ([NSURLProtocol propertyForKey:kPDMockURLProtocol inRequest:request]) {
         return NO;
     }
     // Verify that host is registered.
@@ -56,7 +56,7 @@ static NSString *const kProtocolKey = @"kProtocolKey";
 
 - (void)startLoading {
     NSMutableURLRequest *request = [self.request mutableCopy];
-    [NSURLProtocol setProperty:@(YES) forKey:kProtocolKey inRequest:request];
+    [NSURLProtocol setProperty:@(YES) forKey:kPDMockURLProtocol inRequest:request];
 
     id<NSURLProtocolClient> client = self.client;
     
