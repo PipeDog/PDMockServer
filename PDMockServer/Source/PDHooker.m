@@ -9,25 +9,25 @@
 #import "PDHooker.h"
 #import <objc/runtime.h>
 
-void class_exchangeInstanceMethod(Class cls, SEL originalSEL, SEL replaceSEL) {
-    Method originMethod = class_getInstanceMethod(cls, originalSEL);
-    Method replaceMethod = class_getInstanceMethod(cls, replaceSEL);
+void class_exchangeInstanceMethod(Class cls, SEL replacedSel, SEL replacementSel) {
+    Method replacedMethod = class_getInstanceMethod(cls, replacedSel);
+    Method replacementMethod = class_getInstanceMethod(cls, replacementSel);
     
     BOOL success = class_addMethod(cls,
-                                   originalSEL,
-                                   method_getImplementation(replaceMethod),
-                                   method_getTypeEncoding(replaceMethod));
+                                   replacedSel,
+                                   method_getImplementation(replacementMethod),
+                                   method_getTypeEncoding(replacementMethod));
     if (success) {
         class_replaceMethod(cls,
-                            replaceSEL,
-                            method_getImplementation(originMethod),
-                            method_getTypeEncoding(originMethod));
+                            replacementSel,
+                            method_getImplementation(replacedMethod),
+                            method_getTypeEncoding(replacedMethod));
     } else {
-        method_exchangeImplementations(originMethod, replaceMethod);
+        method_exchangeImplementations(replacedMethod, replacementMethod);
     }
 }
 
-void class_exchangeClassMethod(Class cls, SEL originalSEL, SEL replaceSEL) {
+void class_exchangeClassMethod(Class cls, SEL replacedSel, SEL replacementSel) {
     Class metaClass = object_getClass(cls);
-    class_exchangeInstanceMethod(metaClass, originalSEL, replaceSEL);
+    class_exchangeInstanceMethod(metaClass, replacedSel, replacementSel);
 }

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 FOUNDATION_EXPORT void
-class_exchangeInstanceMethod(Class cls, SEL originalSEL, SEL replaceSEL);
+class_exchangeInstanceMethod(Class cls, SEL replacedSel, SEL replacementSel);
 
 FOUNDATION_EXPORT void
-class_exchangeClassMethod(Class cls, SEL originalSEL, SEL replaceSEL);
+class_exchangeClassMethod(Class cls, SEL replacedSel, SEL replacementSel);
